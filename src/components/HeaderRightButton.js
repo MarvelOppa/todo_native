@@ -1,0 +1,19 @@
+import { Pressable } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import propTypes from 'prop-types';
+import { useNavigation } from '@react-navigation/native';
+
+const HeaderRightButton = ({ tintColor }) => {
+  const navigation = useNavigation();
+  return (
+    <Pressable onPress={() => navigation.navigate('Settings')} hitSlop={10}>
+      <MaterialCommunityIcons name="cog" size={20} color={tintColor} />
+    </Pressable>
+  );
+};
+
+HeaderRightButton.propTypes = {
+  tintColor: propTypes.string,
+};
+
+export default HeaderRightButton;
